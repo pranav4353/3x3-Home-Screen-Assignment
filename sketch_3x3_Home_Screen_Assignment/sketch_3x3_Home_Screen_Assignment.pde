@@ -15,6 +15,9 @@ float buttonX, buttonY, ButtonWidth, ButtonHeight;
 float buttonX1, buttonY1, ButtonWidth1, ButtonHeight1;
 float buttonX2, buttonY2, ButtonWidth2, ButtonHeight2;
 float buttonX3, buttonY3, ButtonWidth3, ButtonHeight3;
+float buttonX4, buttonY4, ButtonWidth4, ButtonHeight4;
+float buttonX5, buttonY5, ButtonWidth5, ButtonHeight5;
+float buttonX6, buttonY6, ButtonWidth6, ButtonHeight6;
 PFont titleFont;
 color blue=#385FC6, resetWhite=#fcfcfc, gray=#565A64;
 int titleSize;
@@ -61,6 +64,21 @@ void setup() {
   ButtonWidth3 = appWidth/15;
   ButtonHeight3 = appHeight/20;
   //
+  buttonX4 = appWidth*19/48;
+  buttonY4 = appHeight*74/80;
+  ButtonWidth4 = appWidth/15;
+  ButtonHeight4 = appHeight/20;
+  //
+  buttonX5 = appWidth*13/24;
+  buttonY5 = appHeight*74/80;
+  ButtonWidth5 = appWidth/15;
+  ButtonHeight5 = appHeight/20;
+  //
+  buttonX6 = appWidth*13/18;
+  buttonY6 = appHeight*47/80;
+  ButtonWidth6 = appWidth*7.75/36;
+  ButtonHeight6 = appHeight/20;
+  //
   rectX1 = appWidth*2/3;
   rectY1 = appHeight*0;
   rectWidth1 = appWidth/3;
@@ -72,23 +90,41 @@ void setup() {
   rectHeight2 = appHeight/3;
   //
   rectX3 = appWidth/3;
-   rectY3 = appHeight/3;
-   rectWidth3 = appWidth*0;
-   rectHeight3 = appHeight/3;
+  rectY3 = appHeight*2/3;
+  rectWidth3 = appWidth/3;
+  rectHeight3 = appHeight/3;
+  //
+  rectX4 = appWidth*0;
+  rectY4 = appHeight/3;
+  rectWidth4 = appWidth/3;
+  rectHeight4 = appHeight/3;
+  //
+  rectX5 = appWidth*2/3;
+  rectY5 = appHeight/3;
+  rectWidth5 = appWidth/3;
+  rectHeight5 = appHeight/3;
+  //
+  rectX6 = appWidth*0;
+  rectY6 = appHeight*2/3;
+  rectWidth6 = appWidth/3;
+  rectHeight6 = appHeight/3;
+  //
+  rectX7 = appWidth*2/3;
+  rectY7 = appHeight*2/3;
+  rectWidth7 = appWidth/3;
+  rectHeight7 = appHeight/3;
   //
   //Font stuff
   String[] fontList = PFont.list();
   printArray(fontList);
   titleFont = createFont("Monospaced.bold", 48);
   //
-
-  //
 }//End setup
 //
 void draw() {
   //
   if ( mouseX>titleBoxX1 && mouseX<titleBoxX1+titleBoxWidth1 && mouseY>titleBoxY1 && mouseY<titleBoxY1+titleBoxHeight1 ) {
-        fill(gray); 
+    fill(gray); 
     rect(titleBoxX1, titleBoxY1, titleBoxWidth1, titleBoxHeight1);
     fill(resetWhite);
     textAlign(CENTER, CENTER);
@@ -155,8 +191,22 @@ void draw() {
   //
   if ( a2 == true ) {
     rect(rectX2, rectY2, rectWidth2, rectHeight2);
-    rect(buttonX2, buttonY2, ButtonWidth2, ButtonHeight2);
-    rect(buttonX3, buttonY3, ButtonWidth3, ButtonHeight3);
+
+    if ( mouseX>buttonX2 && mouseX<buttonX2+ButtonWidth2 && mouseY>buttonY2 && mouseY<buttonY2+ButtonHeight2) {
+      fill(gray); 
+      rect(buttonX2, buttonY2, ButtonWidth2, ButtonHeight2);
+      fill(resetWhite);
+    } else {
+      rect(buttonX2, buttonY2, ButtonWidth2, ButtonHeight2);
+    }
+
+    if ( mouseX>buttonX3 && mouseX<buttonX3+ButtonWidth3 && mouseY>buttonY3 && mouseY<buttonY3+ButtonHeight3) {
+      fill(gray); 
+      rect(buttonX3, buttonY3, ButtonWidth3, ButtonHeight3);
+      fill(resetWhite);
+    } else {
+      rect(buttonX3, buttonY3, ButtonWidth3, ButtonHeight3);
+    }
   } else {
     fill(gray);
     rect(rectX2, rectY2, rectWidth2, rectHeight2);
@@ -173,19 +223,111 @@ void draw() {
     fill(resetWhite);
   }
   //
+  //Box 3a
+  //
+  if ( a3 == true ) {
+    //
+    rect(rectX3, rectY3, rectWidth3, rectHeight3);
+    if ( mouseX>buttonX4 && mouseX<buttonX4+ButtonWidth4 && mouseY>buttonY4 && mouseY<buttonY4+ButtonHeight4) {
+      fill(gray); 
+      rect(buttonX4, buttonY4, ButtonWidth4, ButtonHeight4);
+      fill(resetWhite);
+    } else {
+      rect(buttonX4, buttonY4, ButtonWidth4, ButtonHeight4);
+    }
+
+    if ( mouseX>buttonX5 && mouseX<buttonX5+ButtonWidth5 && mouseY>buttonY5 && mouseY<buttonY5+ButtonHeight5) {
+      fill(gray); 
+      rect(buttonX5, buttonY5, ButtonWidth5, ButtonHeight5);
+      fill(resetWhite);
+    } else {
+      rect(buttonX5, buttonY5, ButtonWidth5, ButtonHeight5);
+    }
+  } else {
+    fill(gray);
+    rect(rectX3, rectY3, rectWidth3, rectHeight3);
+    fill(resetWhite);
+  } 
+  //
+  //Box 3b
+  //
+  if ( b3 == true ) {
+    rect(rectX4, rectY4, rectWidth4, rectHeight4);
+  } else {
+    fill(gray);
+    rect(rectX4, rectY4, rectWidth4, rectHeight4);
+    fill(resetWhite);
+  } 
+  //
+  //Box a4
+  //
+  if ( a4 == true ) {
+    rect(rectX5, rectY5, rectWidth5, rectHeight5);
+    if ( mouseX>buttonX6 && mouseX<buttonX6+ButtonWidth6 && mouseY>buttonY6 && mouseY<buttonY6+ButtonHeight6) {
+      fill(gray); 
+      rect(buttonX6, buttonY6, ButtonWidth6, ButtonHeight6);
+      fill(resetWhite);
+    } else {
+      rect(buttonX6, buttonY6, ButtonWidth6, ButtonHeight6);
+    }
+  } else {
+    fill(gray);
+    rect(rectX5, rectY5, rectWidth5, rectHeight5);
+    fill(resetWhite);
+  } 
+  //
+  //Box b4
+  //
+  if ( b4 == true ) {
+    rect(rectX6, rectY6, rectWidth6, rectHeight6);
+  } else {
+    fill(gray);
+    rect(rectX6, rectY6, rectWidth6, rectHeight6);
+    fill(resetWhite);
+  } 
+  //
+  //Box fin
+  //
+  if ( fin == true ) {
+    rect(rectX7, rectY7, rectWidth7, rectHeight7);
+  } else {
+    fill(gray);
+    rect(rectX7, rectY7, rectWidth7, rectHeight7);
+    fill(resetWhite);
+  }
+  //
 }//End draw
 //
 //void keyPressed() {}//End keyPressed
 //
 void mousePressed() {
   //
-  if ( mouseX>titleBoxX1 && mouseX<titleBoxX1+titleBoxWidth1 && mouseY>titleBoxY1 && mouseY<titleBoxY1+titleBoxHeight1 ) {a1 = false; a2 = false; b2 = false; a3 = false; b3 = false; a4 = false; b4 = false; fin = false;}
+  if ( mouseX>titleBoxX1 && mouseX<titleBoxX1+titleBoxWidth1 && mouseY>titleBoxY1 && mouseY<titleBoxY1+titleBoxHeight1 ) {
+    a1 = false; 
+    a2 = false; 
+    b2 = false; 
+    a3 = false; 
+    b3 = false; 
+    a4 = false; 
+    b4 = false; 
+    fin = false;
+  }
   //
   if ( mouseX>titleBoxX && mouseX<titleBoxX+titleBoxWidth && mouseY>titleBoxY && mouseY<titleBoxY+titleBoxHeight ) a1=true;
   //
   if ( mouseX>buttonX && mouseX<buttonX+ButtonWidth && mouseY>buttonY && mouseY<buttonY+ButtonHeight && a1==true ) a2=true;
   //
   if ( mouseX>buttonX1 && mouseX<buttonX1+ButtonWidth1 && mouseY>buttonY1 && mouseY<buttonY1+ButtonHeight1 && a1==true ) b2=true;
+  //
+  if ( mouseX>buttonX2 && mouseX<buttonX2+ButtonWidth2 && mouseY>buttonY2 && mouseY<buttonY2+ButtonHeight2 && a2==true) a3=true;
+  //
+  if ( mouseX>buttonX3 && mouseX<buttonX3+ButtonWidth3 && mouseY>buttonY3 && mouseY<buttonY3+ButtonHeight3 && a2==true) b3=true;
+  //
+  if ( mouseX>buttonX4 && mouseX<buttonX4+ButtonWidth4 && mouseY>buttonY4 && mouseY<buttonY4+ButtonHeight4 && a3) a4=true;
+  //
+  if ( mouseX>buttonX5 && mouseX<buttonX5+ButtonWidth5 && mouseY>buttonY5 && mouseY<buttonY5+ButtonHeight5 && a3==true) b4=true;
+  //
+  if ( mouseX>buttonX6 && mouseX<buttonX6+ButtonWidth6 && mouseY>buttonY6 && mouseY<buttonY6+ButtonHeight6 && a4==true) fin=true;
   //
 }//End mousePressed
 //
