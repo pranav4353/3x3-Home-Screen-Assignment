@@ -18,9 +18,12 @@ float buttonX3, buttonY3, ButtonWidth3, ButtonHeight3;
 float buttonX4, buttonY4, ButtonWidth4, ButtonHeight4;
 float buttonX5, buttonY5, ButtonWidth5, ButtonHeight5;
 float buttonX6, buttonY6, ButtonWidth6, ButtonHeight6;
+float imgX1, imgY1, imgWidth1, imgHeight1;
+float imgX2, imgY2, imgWidth2, imgHeight2;
 PFont titleFont;
 color blue=#385FC6, resetWhite=#fcfcfc, gray=#565A64;
 int titleSize;
+PImage pic1, pic2;
 Boolean a1 = false, a2 = false, b2 = false, a3 = false, b3 = false, a4 = false, b4 = false, fin = false;
 //
 void setup() {
@@ -119,6 +122,19 @@ void setup() {
   printArray(fontList);
   titleFont = createFont("Monospaced.bold", 48);
   //
+  pic1 = loadImage("../Images/Eo_circle_green_checkmark.svg.png"); //Dimentions: width: 1200 height: 1200
+  pic2 = loadImage("../Images/GRA-Not-Recruiting.png"); //Dimentions: width: 720 height: 720
+  //
+  /* imgX1 = ;
+   imgY1 = ;
+   imgWidth1 = ;
+   imgHeight1 = ;
+   //
+   imgX2 = ;
+   imgY2 = ;
+   imgWidth2 = ;
+   imgHeight2 = ; */
+  //
 }//End setup
 //
 void draw() {
@@ -165,11 +181,12 @@ void draw() {
   //Box 1
   //
   if ( a1 == true ) {
-    rect(rectX1, rectY1, rectWidth1, rectHeight1); 
+    rect(rectX1, rectY1, rectWidth1, rectHeight1);        
     if ( mouseX>buttonX && mouseX<buttonX+ButtonWidth && mouseY>buttonY && mouseY<buttonY+ButtonHeight) {
       fill(gray); 
       rect(buttonX, buttonY, ButtonWidth, ButtonHeight);
       fill(resetWhite);
+      image(pic1, buttonX+ButtonWidth/4, buttonY, ButtonWidth/2, ButtonHeight);
     } else {
       rect(buttonX, buttonY, ButtonWidth, ButtonHeight);
     }
@@ -178,6 +195,7 @@ void draw() {
       fill(gray); 
       rect(buttonX1, buttonY1, ButtonWidth1, ButtonHeight1);
       fill(resetWhite);
+      image(pic2, buttonX1+ButtonWidth1/4, buttonY1, ButtonWidth1/2, ButtonHeight1);
     } else {
       rect(buttonX1, buttonY1, ButtonWidth1, ButtonHeight1);
     }
@@ -196,6 +214,7 @@ void draw() {
       fill(gray); 
       rect(buttonX2, buttonY2, ButtonWidth2, ButtonHeight2);
       fill(resetWhite);
+      image(pic2, buttonX2+ButtonWidth2/4, buttonY2, ButtonWidth2/2, ButtonHeight2);
     } else {
       rect(buttonX2, buttonY2, ButtonWidth2, ButtonHeight2);
     }
@@ -204,6 +223,7 @@ void draw() {
       fill(gray); 
       rect(buttonX3, buttonY3, ButtonWidth3, ButtonHeight3);
       fill(resetWhite);
+      image(pic1, buttonX3+ButtonWidth3/4, buttonY3, ButtonWidth3/2, ButtonHeight3);
     } else {
       rect(buttonX3, buttonY3, ButtonWidth3, ButtonHeight3);
     }
@@ -232,6 +252,7 @@ void draw() {
       fill(gray); 
       rect(buttonX4, buttonY4, ButtonWidth4, ButtonHeight4);
       fill(resetWhite);
+      image(pic1, buttonX4+ButtonWidth4/4, buttonY4, ButtonWidth4/2, ButtonHeight4);
     } else {
       rect(buttonX4, buttonY4, ButtonWidth4, ButtonHeight4);
     }
@@ -240,6 +261,7 @@ void draw() {
       fill(gray); 
       rect(buttonX5, buttonY5, ButtonWidth5, ButtonHeight5);
       fill(resetWhite);
+      image(pic2, buttonX5+ButtonWidth5/4, buttonY5, ButtonWidth5/2, ButtonHeight5);
     } else {
       rect(buttonX5, buttonY5, ButtonWidth5, ButtonHeight5);
     }
